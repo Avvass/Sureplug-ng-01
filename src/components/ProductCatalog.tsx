@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Star, Smartphone, Laptop, Headphones } from "lucide-react";
+import { ShoppingCart, Star, Smartphone, Laptop, Headphones, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Sample product data - in a real app, this would come from an API
 const smartphones = [
@@ -235,6 +236,19 @@ const ProductCatalog = () => {
             <ProductCard key={product.id} product={product} type="phone" />
           ))}
         </div>
+        
+        <div className="text-center mt-8">
+          <Link to="/smartphones">
+            <Button variant="outline" size="lg" className="px-8">
+              View All iPhones <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+          <Link to="/samsung" className="ml-4">
+            <Button variant="outline" size="lg" className="px-8">
+              View Samsung Galaxy <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </div>
       </section>
 
       {/* MacBooks Section */}
@@ -255,6 +269,14 @@ const ProductCatalog = () => {
             <ProductCard key={product.id} product={product} type="laptop" />
           ))}
         </div>
+        
+        <div className="text-center mt-8">
+          <Link to="/macbooks">
+            <Button variant="outline" size="lg" className="px-8">
+              View All MacBooks <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
+        </div>
       </section>
 
       {/* AirPods Section */}
@@ -274,6 +296,14 @@ const ProductCatalog = () => {
           {airpods.map((product) => (
             <ProductCard key={product.id} product={product} type="airpods" />
           ))}
+        </div>
+        
+        <div className="text-center mt-8">
+          <Link to="/airpods">
+            <Button variant="outline" size="lg" className="px-8">
+              View All AirPods <ArrowRight className="w-4 h-4 ml-2" />
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
