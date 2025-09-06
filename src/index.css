@@ -2,87 +2,85 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Sure Plug NG Design System - Premium Tech Retail */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 225 15% 15%;
+    
+    /* Brand Identity */
+    --brand-primary: 220 90% 25%;        /* Deep Tech Blue */
+    --brand-secondary: 210 100% 50%;     /* Electric Blue */
+    --brand-accent: 25 95% 55%;          /* Hot Deal Orange */
+    --brand-success: 145 65% 45%;        /* Success Green */
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 90% 25%), hsl(210 100% 50%));
+    --gradient-card: linear-gradient(145deg, hsl(220 15% 98%), hsl(220 15% 95%));
+    --gradient-hot: linear-gradient(135deg, hsl(25 95% 55%), hsl(15 90% 60%));
+    --gradient-premium: linear-gradient(135deg, hsl(220 90% 25%), hsl(240 80% 35%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(220 90% 25% / 0.1);
+    --shadow-hover: 0 8px 30px -4px hsl(220 90% 25% / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* Component Tokens */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --card-foreground: 225 15% 15%;
+    --primary: 220 90% 25%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 225 15% 15%;
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 220 15% 95%;
+    --muted-foreground: 225 30% 50%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 220 90% 25%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 15% 15%;
+    --radius: 0.75rem;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
+    /* Sidebar tokens remain the same */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: 225 25% 8%;
+    --foreground: 220 15% 95%;
+    --brand-primary: 210 100% 60%;
+    --brand-secondary: 220 90% 70%;
+    --card: 225 25% 10%;
+    --card-foreground: 220 15% 95%;
+    --primary: 210 100% 60%;
+    --primary-foreground: 225 25% 8%;
+    --secondary: 225 25% 15%;
+    --secondary-foreground: 220 15% 95%;
+    --accent: 25 95% 65%;
+    --accent-foreground: 225 25% 8%;
+    --muted: 225 25% 15%;
+    --muted-foreground: 225 15% 60%;
+    --border: 225 25% 20%;
+    --input: 225 25% 20%;
+    --ring: 210 100% 60%;
+    --popover: 225 25% 10%;
+    --popover-foreground: 220 15% 95%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -94,12 +92,66 @@ All colors MUST be HSL.
   }
 }
 
+@layer components {
+  /* Hot Deal Stamp */
+  .hot-deal-stamp {
+    @apply absolute -top-3 -right-3 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs font-bold px-3 py-1 rounded-full transform rotate-12 shadow-lg animate-pulse;
+  }
+  
+  /* Product Card */
+  .product-card {
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .product-card:hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  /* Hero Gradient */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Premium Button */
+  .btn-premium {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:scale-105 shadow-lg;
+  }
+  
+  /* Category Grid */
+  .category-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
   }
 }
