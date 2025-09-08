@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacBooks - Pro & Air Series 2015-2024 | Sure Plug NG</title>
+    <meta name="description" content="Shop MacBook Pro and Air from 2015 to 2024 models at Sure Plug NG. M3 Max, M2, M1 chips, Intel processors. Authentic Apple laptops with warranty in Abuja.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">SP</div>
+                    <div class="logo-text">
+                        <h1>Sure Plug NG</h1>
+                        <p>Premium Tech Store</p>
+                    </div>
+                </div>
+                
+                <nav class="desktop-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="smartphones.html" class="nav-link">Smartphones</a>
+                    <a href="macbooks.html" class="nav-link">MacBooks</a>
+                    <a href="airpods.html" class="nav-link">AirPods</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </nav>
+                
+                <div class="header-right">
+                    <div class="location-indicator">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Abuja</span>
+                    </div>
+                    <button class="cart-btn" onclick="showCart()">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav" id="mobileNav">
+                <div class="container">
+                    <div class="mobile-nav-content">
+                        <a href="index.html" class="mobile-nav-link">Home</a>
+                        <a href="smartphones.html" class="mobile-nav-link">Smartphones</a>
+                        <a href="macbooks.html" class="mobile-nav-link">MacBooks</a>
+                        <a href="airpods.html" class="mobile-nav-link">AirPods</a>
+                        <a href="index.html#contact" class="mobile-nav-link">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <div class="page-nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <span>/</span>
+                <h1>MacBooks</h1>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search MacBooks..." 
+                        onkeyup="searchProducts()"
+                    >
+                </div>
+            </div>
+            
+            <p class="results-count" id="resultsCount">
+                Showing all MacBooks
+            </p>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section class="category-section">
+        <div class="container">
+            <!-- Quick Categories -->
+            <div class="section-header">
+                <div class="section-title">
+                    <i class="fab fa-apple"></i>
+                    <h2>MacBook Collection</h2>
+                </div>
+                <div class="category-filters">
+                    <button class="filter-btn active" onclick="filterByType('all')">All Models</button>
+                    <button class="filter-btn" onclick="filterByType('Pro')">MacBook Pro</button>
+                    <button class="filter-btn" onclick="filterByType('Air')">MacBook Air</button>
+                    <button class="filter-btn" onclick="filterByChip('M3')">M3 Chip</button>
+                    <button class="filter-btn" onclick="filterByChip('M2')">M2 Chip</button>
+                    <button class="filter-btn" onclick="filterByChip('M1')">M1 Chip</button>
+                </div>
+            </div>
+            
+            <!-- Latest MacBook Pro Series -->
+            <div class="brand-section" id="macbook-pro-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-laptop"></i>
+                        <h3>MacBook Pro Series</h3>
+                    </div>
+                    <p class="section-description">
+                        Professional laptops with M3 Max, M2 Max chips and stunning Liquid Retina displays.
+                    </p>
+                </div>
+                <div class="category-grid" id="macbookProGrid">
+                    <!-- MacBook Pro products will be injected by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- MacBook Air Series -->
+            <div class="brand-section" id="macbook-air-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-laptop"></i>
+                        <h3>MacBook Air Series</h3>
+                    </div>
+                    <p class="section-description">
+                        Ultra-thin and lightweight laptops perfect for everyday computing and creativity.
+                    </p>
+                </div>
+                <div class="category-grid" id="macbookAirGrid">
+                    <!-- MacBook Air products will be injected by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Legacy MacBooks -->
+            <div class="brand-section" id="legacy-macbook-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <i class="fas fa-history"></i>
+                        <h3>Legacy MacBooks (2015-2019)</h3>
+                    </div>
+                    <p class="section-description">
+                        Intel-based MacBooks perfect for budget-conscious buyers and specific workflows.
+                    </p>
+                </div>
+                <div class="category-grid" id="legacyMacbookGrid">
+                    <!-- Legacy MacBook products will be injected by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- No Results -->
+            <div class="no-results" id="noResults">
+                <i class="fas fa-search" style="font-size: 3rem; color: var(--muted-foreground); margin-bottom: 1rem;"></i>
+                <h3>No MacBooks found</h3>
+                <p>Try adjusting your search or filter criteria</p>
+                <button class="btn btn-primary" onclick="clearFilters()">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login Required</h3>
+                <button class="modal-close" onclick="closeModal('loginModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Please login or create an account to add items to cart</p>
+                <div class="modal-buttons">
+                    <a href="login.html" class="btn btn-primary">Login</a>
+                    <a href="signup.html" class="btn btn-outline">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cartModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="modal-close" onclick="closeModal('cartModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems">
+                    <!-- Cart items will be injected by JavaScript -->
+                </div>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+                    <button class="btn btn-outline" onclick="closeModal('cartModal')">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .category-filters {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            background: white;
+            color: var(--foreground);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.875rem;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--brand-primary);
+            color: white;
+            border-color: var(--brand-primary);
+        }
+        
+        .brand-section {
+            margin: 3rem 0;
+        }
+        
+        .brand-section .section-header {
+            margin-bottom: 2rem;
+        }
+        
+        .brand-section h3 {
+            font-size: 1.5rem;
+            color: var(--foreground);
+        }
+        
+        .chip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: var(--gradient-hero);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .performance-indicator {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--muted-foreground);
+        }
+        
+        .performance-bar {
+            flex: 1;
+            height: 4px;
+            background: var(--border);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .performance-fill {
+            height: 100%;
+            background: var(--brand-success);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Load MacBooks
+        document.addEventListener('DOMContentLoaded', function() {
+            loadMacBooks();
+            updateCartCount();
+        });
+        
+        function loadMacBooks() {
+            // MacBook Pro models (M3, M2, M1)
+            const macbookProModels = allMacBooks.filter(macbook => 
+                macbook.type === 'Pro' && (
+                    macbook.badge.includes('M3') || 
+                    macbook.badge.includes('M2') || 
+                    macbook.badge.includes('M1')
+                )
+            );
+            renderMacBooks(macbookProModels, 'macbookProGrid');
+            
+            // MacBook Air models
+            const macbookAirModels = allMacBooks.filter(macbook => 
+                macbook.type === 'Air'
+            );
+            renderMacBooks(macbookAirModels, 'macbookAirGrid');
+            
+            // Legacy MacBooks (Intel)
+            const legacyMacbooks = allMacBooks.filter(macbook => 
+                macbook.badge.includes('Intel') || parseInt(macbook.year) <= 2019
+            );
+            renderMacBooks(legacyMacbooks, 'legacyMacbookGrid');
+        }
+        
+        function renderMacBooks(products, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+            
+            container.innerHTML = products.map(product => `
+                <div class="product-card" data-type="${product.type}" data-year="${product.year}">
+                    <div class="card-header">
+                        <img src="${product.image}" alt="${product.name}" class="card-image">
+                        <div class="product-badge">${product.badge}</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="chip-badge">
+                            <i class="fas fa-microchip"></i>
+                            ${product.badge}
+                        </div>
+                        <h3>${product.name}</h3>
+                        <div class="product-specs">
+                            <div><i class="fas fa-memory"></i> ${product.specs}</div>
+                            <div><i class="fas fa-palette"></i> ${product.color}</div>
+                            <div><i class="fas fa-calendar"></i> ${product.year}</div>
+                        </div>
+                        <div class="performance-indicator">
+                            <span>Performance:</span>
+                            <div class="performance-bar">
+                                <div class="performance-fill" style="width: ${getPerformanceScore(product.badge)}%"></div>
+                            </div>
+                        </div>
+                        <div class="product-rating">
+                            <div class="stars">
+                                ${renderStars(product.rating)}
+                            </div>
+                            <span>(${product.rating})</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">${product.price}</span>
+                            <span class="original-price">${product.originalPrice}</span>
+                        </div>
+                        <div class="card-actions">
+                            <button class="btn btn-cart" onclick="addToCart(${product.id})">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <a href="https://wa.me/2348122085587?text=Hi! I'm interested in the ${encodeURIComponent(product.name)}" class="btn btn-whatsapp" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function getPerformanceScore(badge) {
+            if (badge.includes('M3 Max')) return 100;
+            if (badge.includes('M3 Pro')) return 90;
+            if (badge.includes('M3')) return 85;
+            if (badge.includes('M2 Max')) return 80;
+            if (badge.includes('M2 Pro')) return 75;
+            if (badge.includes('M2')) return 70;
+            if (badge.includes('M1 Max')) return 65;
+            if (badge.includes('M1 Pro')) return 60;
+            if (badge.includes('M1')) return 55;
+            if (badge.includes('Intel i9')) return 45;
+            if (badge.includes('Intel i7')) return 35;
+            if (badge.includes('Intel i5')) return 25;
+            return 20;
+        }
+        
+        function filterByType(type) {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const brandSections = document.querySelectorAll('.brand-section');
+            
+            if (type === 'all') {
+                brandSections.forEach(section => section.style.display = 'block');
+                document.getElementById('resultsCount').textContent = 'Showing all MacBooks';
+            } else {
+                brandSections.forEach(section => {
+                    if (section.id.includes(type.toLowerCase())) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+                document.getElementById('resultsCount').textContent = `Showing MacBook ${type} models`;
+            }
+        }
+        
+        function filterByChip(chip) {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            const productCards = document.querySelectorAll('.product-card');
+            let visibleCount = 0;
+            
+            productCards.forEach(card => {
+                const chipBadge = card.querySelector('.chip-badge').textContent;
+                if (chipBadge.includes(chip)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Show all sections but filter products
+            const brandSections = document.querySelectorAll('.brand-section');
+            brandSections.forEach(section => section.style.display = 'block');
+            
+            document.getElementById('resultsCount').textContent = `Found ${visibleCount} MacBook${visibleCount !== 1 ? 's' : ''} with ${chip} chip`;
+        }
+        
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            let visibleCount = 0;
+            
+            productCards.forEach(card => {
+                const productName = card.querySelector('h3').textContent.toLowerCase();
+                const productSpecs = card.querySelector('.product-specs').textContent.toLowerCase();
+                if (productName.includes(searchTerm) || productSpecs.includes(searchTerm)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Show/hide no results
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0 && searchTerm) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+            
+            // Update results count
+            if (searchTerm) {
+                document.getElementById('resultsCount').textContent = 
+                    `Found ${visibleCount} MacBook${visibleCount !== 1 ? 's' : ''} for "${searchTerm}"`;
+            } else {
+                document.getElementById('resultsCount').textContent = 'Showing all MacBooks';
+            }
+        }
+        
+        function clearFilters() {
+            document.getElementById('searchInput').value = '';
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            filterButtons[0].classList.add('active');
+            
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => card.style.display = 'block');
+            
+            const brandSections = document.querySelectorAll('.brand-section');
+            brandSections.forEach(section => section.style.display = 'block');
+            
+            document.getElementById('resultsCount').textContent = 'Showing all MacBooks';
+        }
+    </script>
+</body>
+</html>
