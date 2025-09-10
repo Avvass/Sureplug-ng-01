@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart, Menu, X, MapPin, Phone, User, LogOut } from "lucide-react";
 import { toast } from "sonner";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -87,6 +88,7 @@ const Header = () => {
 
             {/* Auth & Cart */}
             <div className="flex items-center space-x-2">
+              <ThemeToggle />
               {isLoggedIn ? (
                 <>
                   <Button variant="outline" size="sm" className="relative" onClick={handleCartClick}>

@@ -89,10 +89,50 @@ export default {
             height: "0",
           },
         },
+        // Dark Mode Exclusive Animations
+        "neon-pulse": {
+          "0%, 100%": {
+            textShadow: "0 0 20px hsl(210 100% 65% / 0.8), 0 0 40px hsl(210 100% 65% / 0.6)",
+          },
+          "50%": {
+            textShadow: "0 0 30px hsl(210 100% 65% / 1), 0 0 60px hsl(210 100% 65% / 0.8)",
+          },
+        },
+        "glow": {
+          "0%, 100%": {
+            boxShadow: "0 0 20px hsl(210 100% 65% / 0.3)",
+          },
+          "50%": {
+            boxShadow: "0 0 40px hsl(210 100% 65% / 0.6), 0 0 60px hsl(210 100% 65% / 0.4)",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "gradient-x": {
+          "0%, 100%": {
+            backgroundSize: "200% 200%",
+            backgroundPosition: "left center",
+          },
+          "50%": {
+            backgroundSize: "200% 200%",
+            backgroundPosition: "right center",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        // Dark Mode Exclusive Animations
+        "neon-pulse": "neon-pulse 2s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
+        "gradient-x": "gradient-x 15s ease infinite",
       },
     },
   },

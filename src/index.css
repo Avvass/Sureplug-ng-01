@@ -62,33 +62,55 @@
   }
 
   .dark {
-    --background: 225 25% 8%;
-    --foreground: 220 15% 95%;
-    --brand-primary: 210 100% 60%;
-    --brand-secondary: 220 90% 70%;
-    --card: 225 25% 10%;
-    --card-foreground: 220 15% 95%;
-    --primary: 210 100% 60%;
-    --primary-foreground: 225 25% 8%;
-    --secondary: 225 25% 15%;
-    --secondary-foreground: 220 15% 95%;
-    --accent: 25 95% 65%;
-    --accent-foreground: 225 25% 8%;
-    --muted: 225 25% 15%;
-    --muted-foreground: 225 15% 60%;
-    --border: 225 25% 20%;
-    --input: 225 25% 20%;
-    --ring: 210 100% 60%;
-    --popover: 225 25% 10%;
-    --popover-foreground: 220 15% 95%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Enhanced Dark Mode - Creative Tech Theme */
+    --background: 225 25% 6%;
+    --foreground: 220 15% 98%;
+    
+    /* Enhanced Brand Colors for Dark Mode */
+    --brand-primary: 210 100% 65%;        /* Brighter Blue */
+    --brand-secondary: 220 90% 75%;       /* Lighter Electric Blue */
+    --brand-accent: 25 95% 70%;           /* Brighter Orange */
+    --brand-success: 145 65% 55%;         /* Brighter Green */
+    
+    /* Enhanced Gradients for Dark Mode */
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 65%), hsl(220 90% 75%));
+    --gradient-card: linear-gradient(145deg, hsl(225 25% 12%), hsl(225 25% 8%));
+    --gradient-hot: linear-gradient(135deg, hsl(25 95% 70%), hsl(15 90% 75%));
+    --gradient-premium: linear-gradient(135deg, hsl(210 100% 65%), hsl(240 80% 70%));
+    
+    /* Dark Mode Exclusive Gradients */
+    --gradient-dark-glow: linear-gradient(135deg, hsl(210 100% 20%), hsl(240 80% 25%));
+    --gradient-neon: linear-gradient(90deg, hsl(210 100% 65%), hsl(25 95% 70%), hsl(145 65% 55%));
+    
+    /* Enhanced Shadows with Glow Effects */
+    --shadow-card: 0 8px 32px -8px hsl(210 100% 65% / 0.3);
+    --shadow-hover: 0 12px 40px -8px hsl(210 100% 65% / 0.4);
+    --shadow-glow: 0 0 40px hsl(210 100% 65% / 0.2);
+    
+    /* Component Colors */
+    --card: 225 25% 8%;
+    --card-foreground: 220 15% 98%;
+    --primary: 210 100% 65%;
+    --primary-foreground: 225 25% 6%;
+    --secondary: 225 25% 12%;
+    --secondary-foreground: 220 15% 98%;
+    --accent: 25 95% 70%;
+    --accent-foreground: 225 25% 6%;
+    --muted: 225 25% 12%;
+    --muted-foreground: 225 15% 70%;
+    --border: 225 25% 18%;
+    --input: 225 25% 12%;
+    --ring: 210 100% 65%;
+    --popover: 225 25% 8%;
+    --popover-foreground: 220 15% 98%;
+    --sidebar-background: 225 25% 6%;
+    --sidebar-foreground: 220 15% 98%;
+    --sidebar-primary: 210 100% 65%;
+    --sidebar-primary-foreground: 225 25% 6%;
+    --sidebar-accent: 225 25% 12%;
+    --sidebar-accent-foreground: 220 15% 98%;
+    --sidebar-border: 225 25% 18%;
+    --sidebar-ring: 210 100% 65%;
   }
 }
 
@@ -100,7 +122,7 @@
   
   /* Product Card */
   .product-card {
-    @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    @apply bg-card border border-border rounded-xl p-6 transition-all duration-500 hover:shadow-xl hover:-translate-y-2;
     box-shadow: var(--shadow-card);
   }
   
@@ -108,9 +130,35 @@
     box-shadow: var(--shadow-hover);
   }
   
+  /* Dark Mode Enhanced Product Card */
+  .dark .product-card {
+    @apply bg-gradient-to-br from-card to-secondary/50;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .dark .product-card:hover {
+    @apply scale-105;
+    box-shadow: 0 20px 60px -12px hsl(210 100% 65% / 0.5);
+  }
+  
   /* Hero Gradient */
   .hero-gradient {
     background: var(--gradient-hero);
+  }
+  
+  /* Dark Mode Hero Enhancement */
+  .dark .hero-gradient {
+    background: var(--gradient-neon);
+    position: relative;
+  }
+  
+  .dark .hero-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-dark-glow);
+    opacity: 0.8;
+    mix-blend-mode: overlay;
   }
   
   /* Premium Button */
@@ -118,9 +166,48 @@
     @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 hover:from-blue-700 hover:to-blue-800 hover:scale-105 shadow-lg;
   }
   
+  /* Dark Mode Premium Button */
+  .dark .btn-premium {
+    @apply bg-gradient-to-r from-brand-primary to-brand-secondary;
+    box-shadow: 0 8px 32px -8px hsl(210 100% 65% / 0.4);
+  }
+  
+  .dark .btn-premium:hover {
+    box-shadow: 0 12px 40px -8px hsl(210 100% 65% / 0.6);
+  }
+  
   /* Category Grid */
   .category-grid {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+  }
+  
+  /* Dark Mode Enhancements */
+  .dark-glow {
+    @apply shadow-lg;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .dark .dark-glow {
+    box-shadow: 0 0 50px hsl(210 100% 65% / 0.3);
+  }
+  
+  /* Neon Text Effect for Dark Mode */
+  .neon-text {
+    @apply text-brand-primary;
+  }
+  
+  .dark .neon-text {
+    text-shadow: 0 0 20px hsl(210 100% 65% / 0.8);
+  }
+  
+  /* Animated Border for Dark Mode */
+  .dark-border-glow {
+    @apply border border-border;
+  }
+  
+  .dark .dark-border-glow {
+    border-color: hsl(210 100% 65% / 0.3);
+    box-shadow: inset 0 0 20px hsl(210 100% 65% / 0.1);
   }
 }
 
