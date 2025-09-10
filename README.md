@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to Sure Plug NG Project 02
 
 ## Project info
 
