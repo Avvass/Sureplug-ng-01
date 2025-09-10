@@ -1,9 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ShoppingCart, Menu, X, MapPin, Phone } from "lucide-react";
+import { ShoppingCart, Menu, X, MapPin, Phone, User, LogOut } from "lucide-react";
+import { toast } from "sonner";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+  const [userRole, setUserRole] = useState("");
+
+  useEffect(() => {
+    const role = localStorage.getItem("userRole");
+    const name = localStorage.getItem("userName");
+    const email = localStorage.getItem("userEmail");
+    
+    if (role) {
+      setIsLoggedIn(true);
+      setUserRole(role);
+      setUserName(name || email || "User");
+    }
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("userRole");
+    localStorage.removeItem("userEmail");
+    localStorage.removeItem("userName");
+    setIsLoggedIn(false);
+    setUserName("");
+    setUserRole("");
+    toast.success("Logged out successfully!");
+  };
+
+  const handleCartClick = () => {
+    if (!isLoggedIn) {
+      toast.error("Please login to access your cart!");
+      navigate("/login");
+      return;
+    }
+    // Handle cart functionality here
+    toast.info("Cart functionality coming soon!");
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
@@ -47,13 +85,47 @@ const Header = () => {
               <span>Abuja</span>
             </div>
 
-            {/* Cart */}
-            <Button variant="outline" size="sm" className="relative">
-              <ShoppingCart className="w-4 h-4" />
-              <span className="absolute -top-2 -right-2 bg-brand-accent text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
-              </span>
-            </Button>
+            {/* Auth & Cart */}
+            <div className="flex items-center space-x-2">
+              {isLoggedIn ? (
+                <>
+                  <Button variant="outline" size="sm" className="relative" onClick={handleCartClick}>
+                    <ShoppingCart className="w-4 h-4" />
+                    <span className="absolute -top-2 -right-2 bg-brand-accent text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                      0
+                    </span>
+                  </Button>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm text-muted-foreground hidden sm:inline">
+                      Hello, {userName}
+                    </span>
+                    {userRole === "admin" && (
+                      <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        onClick={() => navigate("/admin")}
+                        className="text-brand-primary hover:text-brand-secondary"
+                      >
+                        Dashboard
+                      </Button>
+                    )}
+                    <Button variant="ghost" size="sm" onClick={handleLogout}>
+                      <LogOut className="w-4 h-4" />
+                    </Button>
+                  </div>
+                </>
+              ) : (
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={() => navigate("/login")}
+                  className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white border-0 hover:from-brand-secondary hover:to-brand-primary"
+                >
+                  <User className="w-4 h-4 mr-1" />
+                  Login
+                </Button>
+              )}
+            </div>
 
             {/* Mobile Menu Toggle */}
             <Button

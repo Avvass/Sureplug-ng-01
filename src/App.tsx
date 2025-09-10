@@ -9,6 +9,8 @@ import Smartphones from "./pages/Smartphones";
 import Samsung from "./pages/Samsung";
 import MacBooks from "./pages/MacBooks";
 import AirPodsPage from "./pages/AirPodsPage";
+import Login from "./pages/Login";
+import AdminDashboard from "./pages/AdminDashboard";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ const App = () => (
           <Route path="/samsung" element={<Samsung />} />
           <Route path="/macbooks" element={<MacBooks />} />
           <Route path="/airpods" element={<AirPodsPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
