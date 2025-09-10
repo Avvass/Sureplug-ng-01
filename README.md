@@ -1,45 +1,18 @@
-# Welcome to Sure Plug NG Project 02
+# Welcome to your Lovable project
 
 ## Project info
 
-**URL**: http://192.168.18.5:8080/
+**URL**: https://lovable.dev/projects/f036620d-44d0-4089-9963-58f1ffe76be0
 
-## More About This Page
+## How can I edit this code?
 
-Sure Plug has all it takes to breakthrough
+There are several ways of editing your application.
 
-# Sure Plug NG
+**Use Lovable**
 
-**Sure Plug NG** is a web application for buying devices, gadgets, and laptops.  
-We are located in **Abuja, Nigeria**, with options for **delivery** and **walk-in store visits**.
+Simply visit the [Lovable Project](https://lovable.dev/projects/f036620d-44d0-4089-9963-58f1ffe76be0) and start prompting.
 
-## Features
-- Browse and search gadgets, phones, and laptops
-- Hot deals & promotions
-- Delivery within Abuja and across Nigeria
-- Walk-in store at:
-  - Banex Plaza, Wuse Abuja
-  - Heart Plaza, Abuja–Keffi Expressway
-
-## Tech Stack
-- Frontend: React / Vite , Typescript
-- Backend: Node.js / npm
-- Database: Firebase 
-- Styling: TailwindCSS
-
-## Setup
-```bash
-# clone repo
-git clone https://github.com/YOUR-USERNAME/sureplug-ng.git
-
-# move into project
-cd sureplug-ng
-
-# install dependencies
-npm install
-
-# run locally
-npm start
+Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
@@ -77,12 +50,24 @@ npm run dev
 - Click on "New codespace" to launch a new Codespace environment.
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
+## What technologies are used for this project?
+
+This project is built with:
+
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
+
 ## How can I deploy this project?
 
-Simply open http://192.168.18.5:8080/ 
+Simply open [Lovable](https://lovable.dev/projects/f036620d-44d0-4089-9963-58f1ffe76be0) and click on Share -> Publish.
 
-## Can I connect a custom domain to my project?
+## Can I connect a custom domain to my Lovable project?
 
 Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
